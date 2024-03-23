@@ -27,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4998045492662492001}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,7 +35,6 @@ Transform:
   m_Children:
   - {fileID: 4998045494264635978}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &4998045492662492007
 NavMeshAgent:
@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 3887320262935285439, guid: f80617fb53500f24783cdb0794fb40e7, type: 3}
   viewAngle: 90
   damage: 30
 --- !u!114 &4998045492662492004
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 100
+  playerProgress: {fileID: 0}
 --- !u!136 &4998045492662492005
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -99,8 +100,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4998045492662492001}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.25
   m_Height: 1.4
   m_Direction: 1
@@ -110,7 +120,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 4998045492662492006}
     m_Modifications:
     - target: {fileID: 100074, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
@@ -174,7 +184,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741f73214c8e59045b42ebac4be91444, type: 3}
 --- !u!4 &4998045494264635978 stripped
 Transform:
