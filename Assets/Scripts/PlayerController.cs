@@ -6,7 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public float gravity = 9.8f;
     public float jumpForce;
-    public float speed;   
+    public float speed;
+
+    public Animator animator;
 
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
@@ -19,33 +21,46 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        //Movement
-        _moveVector = Vector3.zero;
+        MovementUpdate();
+        JumpUpdate();
+    }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            _moveVector += transform.forward;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            _moveVector -= transform.forward;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _moveVector -= transform.right;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _moveVector += transform.right;
-        }
-
-        //Jump
+    private void JumpUpdate()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -jumpForce;
         }
-
     }
+
+    private void MovementUpdate()
+    {
+        _moveVector = Vector3.zero;
+        var runDirection = 0;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            _moveVector += transform.forward;
+            runDirection = 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            _moveVector -= transform.forward;
+            runDirection = 2;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            _moveVector -= transform.right;
+            runDirection = 3;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            _moveVector += transform.right;
+            runDirection = 4;
+        }
+        animator.SetInteger("Run direction", runDirection);
+    }
+
     void FixedUpdate()
     {
         //Movement

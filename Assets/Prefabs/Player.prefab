@@ -66,7 +66,7 @@ CharacterController:
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.035
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &3887320262935285439
@@ -82,8 +82,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9.8
-  jumpForce: 10
-  speed: 5
+  jumpForce: 2.5
+  speed: 3
+  animator: {fileID: 6615960962606005632}
 --- !u!114 &5490537882053981963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   CameraAxisTransform: {fileID: 1546582857329859342}
   minAngle: -30
   maxAngle: 30
-  RotationSpeed: 270
+  RotationSpeed: 300
 --- !u!114 &3059319706788470060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   valueRectTransform: {fileID: 7775015429781773357}
   gameplayUI: {fileID: 6391485074973571846}
   gameOverScreen: {fileID: 2946288664624605364}
+  animator: {fileID: 6615960962606005632}
 --- !u!114 &2626481672328950382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,7 +1051,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1623,13 +1625,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ef17330fd808c0c4dbc65806e0f70cd1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6615960962606005632}
   m_SourcePrefab: {fileID: 100100000, guid: ef17330fd808c0c4dbc65806e0f70cd1, type: 3}
 --- !u!4 &2754465647654319548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ef17330fd808c0c4dbc65806e0f70cd1, type: 3}
   m_PrefabInstance: {fileID: 2428401811540857431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3274683474757545734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ef17330fd808c0c4dbc65806e0f70cd1, type: 3}
+  m_PrefabInstance: {fileID: 2428401811540857431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6615960962606005632
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274683474757545734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 048f1af95ae34d54f841125547f4a270, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4032241699585802052
 PrefabInstance:
   m_ObjectHideFlags: 0
